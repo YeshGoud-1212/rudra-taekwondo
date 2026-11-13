@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowDown, ArrowRight, ArrowUpRight, Award, Activity, Check, CheckCircle2, ChevronRight, Dumbbell, Flame, HeartPulse, Instagram, Medal, MessageCircle, ShieldCheck, Target, Trophy, X, Zap } from 'lucide-react'
+import { Analytics } from '@vercel/analytics/react'
 import { BRAND } from './config'
 import Navbar from './components/Navbar'
 import Logo from './components/Logo'
@@ -99,6 +100,7 @@ function App() {
 
     <AnimatePresence>{lightbox&&<motion.div className="lightbox" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} onClick={()=>setLightbox(null)}><button aria-label="Close image" className="lightbox-close" onClick={()=>setLightbox(null)}><X/></button><motion.img src={lightbox} alt="Enlarged achievement image" initial={{scale:.94}} animate={{scale:1}} onClick={e=>e.stopPropagation()}/></motion.div>}</AnimatePresence>
     <a className="floating-whatsapp" href={`https://wa.me/${BRAND.whatsapp}`} target="_blank" rel="noreferrer" aria-label="Contact on WhatsApp"><MessageCircleIcon/></a>
+    <Analytics />
   </div>
 }
 function MessageCircleIcon(){return <MessageCircle size={24} strokeWidth={2.4}/>}
