@@ -1,0 +1,1 @@
+export default function Logo() { return <a href="#top" className="brand" aria-label="Rudra Taekwondo home"><img className="brand-logo" src="/images/rudra-taekwondo-logo.png" alt="Rudra Taekwondo"/></a> }
